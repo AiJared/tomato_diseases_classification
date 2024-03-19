@@ -25,8 +25,6 @@ from django.views.generic.edit import CreateView
 
 decorators = [never_cache, login_required, administrator_required]
 
-
-
 def clientRegistration(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -51,35 +49,6 @@ def clientRegistration(request):
     return render(request,'accounts/sign_up.html')
 
 
-def psycRegistration(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        username = request.POST.get("username")
-        full_name = request.POST.get("full_name")
-        kmpdb = request.POST.get("kmpdb")
-        password = request.POST.get('password')
-        password2 = request.POST.get('confirm-password')
-
-        if password != password2:
-            messages.error(request,"Password didn't match")
-            return render(request,'accounts/psycsign_up.html')
-        user = User(email=email, username=username, full_name=full_name)
-        user.set_password(password2)
-        user.role = 'Psychiatrist'
-        user.is_active = False
-        user.save()
-        send_activation_email(user,request)
-        
-        psyco = Psychiatrist(user=user,kmpdb=kmpdb)
-        psyco.save()
-        messages.success(request,"Account created succesfully")
-        context = {
-            'psyco':True,
-        }
-        return render(request,'accounts/sign_alert.html',context)
-    return render(request,'accounts/psycsignup.html')
-
-
 def login_user(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -102,35 +71,6 @@ def login_user(request):
             messages.error(request, 'Incorrect password')
             return redirect('/accounts/login/')
     return render(request,'accounts/login.html')
-
-def psyclogin(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        kmpdb = request.POST.get('kmpdb')
-        password = request.POST.get('password')
-        try:
-            psyco= Psychiatrist.objects.get(kmpdb=kmpdb)
-        except Psychiatrist.DoesNotExist:
-            messages.error(request, 'Psychiatrist does not exist!')
-            return redirect('/accounts/psyclogin/') 
-        if psyco.user.email == email:
-            user = authenticate(request, email=email, password=password)
-        
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    messages.success(request, 'Logged in succesfully')
-                    return redirect('/dashboard/')
-                else:
-                    messages.error(request, 'Please activate your account')
-                    return redirect('/accounts/psyclogin/') 
-            else:
-                messages.error(request, 'Incorrect password')
-                return redirect('/accounts/psyclogin/')
-        else:
-            messages.error(request, 'Incorrect email')
-            return redirect('/accounts/psyclogin/')
-    return render(request,'accounts/psyclogin.html')
 
 
 #logout the logged in user   
@@ -166,10 +106,7 @@ def activate(request, uidb64, token):
 
 def edit_profile(request):
     r_user = User.objects.get(id=request.user.id)
-    if request.user.role == 'Psychiatrist':
-        user = Psychiatrist.objects.get(user=r_user)
-    else:
-        user = Client.objects.get(user=r_user)
+    user = Client.objects.get(user=r_user)
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES, instance=user, user=r_user)
         if form.is_valid():
