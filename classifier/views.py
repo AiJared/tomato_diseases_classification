@@ -61,15 +61,17 @@ def classifier_model(request):
         print("Prediction: " + str(np.argmax(result)))
 
         if (np.argmax(result) == 0):
-            prediction = "Daisy"
+            prediction = "Tomato__Tomato_YellowLeaf__Curl_Virus"
         elif (np.argmax(result) == 1):
-            prediction = "Dandelion"
+            prediction = "Tomato_Bacterial_spot"
         elif (np.argmax(result) == 2):
-            prediction = "Rose"
+            prediction = "Tomato_healthy"
         elif (np.argmax(result) == 3):
-            prediction = "Sunflower"
+            prediction = "Tomato_Late_blight"
         elif (np.argmax(result) == 4):
-            prediction = "Tulips"
+            prediction = "Tomato_Leaf_Mold"
+        elif (np.argmax(result) == 5):
+            prediction = "Tomato_Spider_mites_Two_spotted_spider_mite"
         else:
             prediction = "Unknown"
         
