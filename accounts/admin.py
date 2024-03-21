@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib import admin
 
 from django.contrib.auth.models import Group
-from accounts.models import (User, Administrator, Client)
+from accounts.models import (User, Administrator, Client, Itworks, Services)
 
 admin.site.unregister(Group)
 
@@ -34,3 +34,6 @@ class ClientAdmin(admin.ModelAdmin):
         return obj.user.username
     get_username.short_description = "Username"
     get_username.admin_order_field = "user__username"
+
+admin.site.register(Itworks)
+admin.site.register(Services)

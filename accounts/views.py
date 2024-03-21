@@ -40,14 +40,15 @@ def clientRegistration(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         username = request.POST.get("username")
-        full_name = request.POST.get("full_name")
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
         password = request.POST.get('password')
         password2 = request.POST.get('confirm-password')
 
         if password != password2:
             messages.error(request,"Password didn't match")
             return render(request,'accounts/sign_up.html')
-        user = User(email=email, username=username, full_name=full_name)
+        user = User(email=email, username=username, first_name=first_name, last_name=last_name)
         user.set_password(password2)
         user.is_active = False
         user.save()
