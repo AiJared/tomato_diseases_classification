@@ -1,6 +1,6 @@
 from django.urls import path
 from accounts.views import  (
-    clientRegistration, login_user,activate,log_out,edit_profile
+    clientRegistration, login_user,activate, log_out, edit_profile
 )
 
 app_name = "accounts"
