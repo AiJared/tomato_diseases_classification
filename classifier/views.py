@@ -36,7 +36,7 @@ def classifier(request):
         test_image =np.expand_dims(resized_image, axis=0) 
 
         # load model
-        model = tf.keras.models.load_model(os.getcwd() + '/flowers_classifier.h5')
+        model = tf.keras.models.load_model(os.getcwd() + '/tomato_diseases_classifier.h5')
 
         result = model.predict(test_image) 
         # ----------------
