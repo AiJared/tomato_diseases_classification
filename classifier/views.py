@@ -17,7 +17,7 @@ class CustomFileSystemStorage(FileSystemStorage):
         return name
 
 
-def classifier(request):
+def classifier_model(request):
     message = ""
     prediction = ""
     fss = CustomFileSystemStorage()
