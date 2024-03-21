@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomato Diseases Classifier</title>
-    <link rel="stylesheet" href="{% static 'assets1/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets2/css/main.css' %}" />
   </head>
 
   <body>
@@ -33,7 +33,7 @@
 
     <div class="wrapper">
       <img
-        src="{% if image_url %}{{ image_url }}{% else %}{% static 'assets1/images/default.png' %}{% endif %}"
+        src="{% if image_url %}{{ image_url }}{% else %}{% static 'assets2/images/default.png' %}{% endif %}"
         alt="Compressed Image"
         width="400px"
       />
@@ -50,6 +50,6 @@
       <h4><span>Tomato Diseases </span>Classifier</h4>
     </div>
 
-    <script src="{% static 'assets1/js/main.js' %}"></script>
+    <script src="{% static 'assets2/js/main.js' %}"></script>
   </body>
 </html>
