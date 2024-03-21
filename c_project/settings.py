@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #local applications
     "accounts.apps.AccountsConfig",
+    "classifier.apps.ClassifierConfig",
     # 3rd party applications
 ]
 
