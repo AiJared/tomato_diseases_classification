@@ -6,8 +6,8 @@ class ProfileForm(forms.ModelForm):
     full_name = forms.CharField(max_length=50)
     email = forms.CharField(max_length=50)
     username = forms.CharField(max_length=50)
-    town = forms.CharField(max_length=50)
-    county = forms.CharField(max_length=50)
+    # town = forms.CharField(max_length=50)
+    # county = forms.CharField(max_length=50)
 
     password1 = forms.CharField(
         required=False, label="Password", widget=forms.PasswordInput)
@@ -19,12 +19,12 @@ class ProfileForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         super(ProfileForm, self).__init__(*args, **kwargs)
         if user:
-            self.fields['phone'].initial = user.phone
+            # self.fields['phone'].initial = user.phone
             self.fields['full_name'].initial = user.full_name
             self.fields['email'].initial = user.email
             self.fields['username'].initial = user.username
-            self.fields['town'].initial = user.town
-            self.fields['county'].initial = user.county
+            # self.fields['town'].initial = user.town
+            # self.fields['county'].initial = user.county
         for field_name, field in self.fields.items():
             self.fields[field_name].widget.attrs.update({'class':'form-control'})
             # self.fields[field].widget.attrs.update({'style': 'width: 350px;'})
@@ -35,7 +35,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['phone','email','password1','password2','full_name','bio','profile_picture', 'username', 'town']
+        fields = ['email','password1','password2','full_name','bio','profile_picture', 'username']
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')

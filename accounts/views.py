@@ -121,7 +121,7 @@ def edit_profile(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES, instance=user, user=r_user)
         if form.is_valid():
-            phone = form.cleaned_data['phone']
+            # phone = form.cleaned_data['phone']
             full_name = form.cleaned_data['full_name']
             town = form.cleaned_data['town']
             county = form.cleaned_data['county']
@@ -132,7 +132,7 @@ def edit_profile(request):
                 if len(user.profile_picture) > 0:
                     user.profile_picture = request.FILES['image']
             form.save()
-            r_user.phone = phone
+            # r_user.phone = phone
             r_user.full_name = full_name
             r_user.username = username
             r_user.town = town
