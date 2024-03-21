@@ -7,7 +7,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str  
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode  
 from django.template.loader import render_to_string 
-from accounts.models import Administrator, Client, User, Services, Itworks
+from accounts.models import Administrator, Client, User
 from accounts.sendMails import  send_activation_email
 from accounts.forms import ProfileForm
 from django.contrib.auth.decorators import login_required
@@ -24,17 +24,6 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 
 decorators = [never_cache, login_required, administrator_required]
-
-def homepage(request):
-    itworks = Itworks.objects.all()
-    services = Services.objects.all()
-
-    context = {
-        'itworks':itworks,
-        'services':services,
-    }
-
-    return render(request, 'index.html',context)
 
 def clientRegistration(request):
     if request.method == 'POST':
@@ -75,7 +64,7 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 messages.success(request, 'Logged in succesfully')
-                return render(request, 'classifier/classifier_model.html', {})
+                return redirect('/classifier_model/')
             else:
                 messages.error(request, 'Please activate your account')
                 return redirect('/login/') 

@@ -4,10 +4,11 @@ from PIL import Image
 import numpy as np
 
 import tensorflow as tf
+from django.shortcuts import render
 from django.conf import settings
 from django.template.response import TemplateResponse
 from django.utils.datastructures import MultiValueDictKeyError
-
+from accounts.models import Services, Itworks
 from django.core.files.storage import FileSystemStorage
 
 
@@ -16,6 +17,16 @@ class CustomFileSystemStorage(FileSystemStorage):
         self.delete(name)
         return name
 
+def homepage(request):
+    itworks = Itworks.objects.all()
+    services = Services.objects.all()
+
+    context = {
+        'itworks':itworks,
+        'services':services,
+    }
+
+    return render(request, 'index.html',context)
 
 def classifier_model(request):
     message = ""
@@ -64,7 +75,7 @@ def classifier_model(request):
         
         return TemplateResponse(
             request,
-            "index.html",
+            "classifier/classifier_model.html",
             {
                 "message": message,
                 "image": image,
@@ -76,6 +87,6 @@ def classifier_model(request):
 
         return TemplateResponse(
             request,
-            "classifier.html",
+            "classifier/classifier_model.html",
             {"message": "No Image Selected"},
         )
