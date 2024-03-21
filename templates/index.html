@@ -1,0 +1,343 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Aura AI</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/img/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicons/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/mstile-150x150.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet" />
+
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="{% static 'assets/img/logo.png' %}" width="118" alt="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
+          <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+              <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#about">About Us</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#services">Services</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#work">How it Works</a></li>
+            </ul><a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{% url 'accounts:login' %}">Sign In</a>
+            </ul><a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="{% url 'accounts:psyclogin' %}">Psychiatrist</a>
+          </div>
+        </div>
+      </nav>
+      <section class="py-xxl-10 pb-0" id="home">
+        <div class="bg-holder bg-size" style="background-image:url(static/assets/img/gallery/hero-bg.png);background-position:top center;background-size:cover;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row min-vh-xl-100 min-vh-xxl-25">
+            <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="static/assets/img/gallery/hero.png" alt="hero-header" /></div>
+            <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
+              <h1 class="fw-light font-base fs-6 fs-xxl-7">We're <strong>determined </strong>for<br />your&nbsp;<strong>better life.</strong></h1>
+              <p class="fs-1 mb-5">Aura AI can help you recover from your mental health problems by engaging with you in a meaningful human like conversation as it figures out the best solution that fits your condition right. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-5" id="services">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 py-3">
+              <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/bg-departments.png);background-position:top center;background-size:contain;">
+              </div>
+              <!--/.bg-holder-->
+
+              <h1 class="text-center">SERVICES</h1>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0">
+
+        <div class="container">
+          <div class="row py-5 align-items-center justify-content-center justify-content-lg-evenly">
+            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+              <div class="d-flex flex-column align-items-center">
+                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="static/assets/img/icons/neurology.png" alt="..." /><img class="mb-3 deparment-icon-hover" src="assets/img/icons/neurology.svg" alt="..." />
+                    <p class="fs-1 fs-xxl-2 text-center">Find out the problem</p>
+                  </a></div>
+              </div>
+            </div>
+            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+              <div class="d-flex flex-column align-items-center">
+                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="static/assets/img/icons/eye-care.png" alt="..." /><img class="mb-3 deparment-icon-hover" src="assets/img/icons/eye-care.svg" alt="..." />
+                    <p class="fs-1 fs-xxl-2 text-center">Diagonise a specific problem</p>
+                  </a></div>
+              </div>
+            </div>
+            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+              <div class="d-flex flex-column align-items-center">
+                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="static/assets/img/icons/cardiac.png" alt="..." /><img class="mb-3 deparment-icon-hover" src="assets/img/icons/cardiac.svg" alt="..." />
+                    <p class="fs-1 fs-xxl-2 text-center">Figure out the solution</p>
+                  </a></div>
+              </div>
+            </div>
+            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
+              <div class="d-flex flex-column align-items-center">
+                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="static/assets/img/icons/heart.png" alt="..." /><img class="mb-3 deparment-icon-hover" src="assets/img/icons/heart.svg" alt="..." />
+                    <p class="fs-1 fs-xxl-2 text-center">Offer the solution to the client</p>
+                  </a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <section class="bg-secondary">
+        <div class="bg-holder" style="background-image:url(static/assets/img/gallery/bg-eye-care.png);background-position:center;background-size:contain;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5 col-xxl-6"><img class="img-fluid" src="static/assets/img/gallery/AIandMentalHealth1.png" alt="..." /></div>
+            <div class="col-md-7 col-xxl-6 text-center text-md-start">
+              <h2 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Mental Health Care with top AI<br class="d-none d-sm-block" />and High Accuracy.</h2>
+              <p class="text-light">We've built an AI that will walk with you through the path of getting better everyday.<br class="d-none d-sm-block" />Here, there is nothing more important than your mental health and <br class="d-none d-sm-block" />that of your loved ones. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="pb-0" id="about">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 py-3">
+              <div class="bg-holder bg-size" style="background-image:url(static/assets/img/gallery/about-us.png);background-position:top center;background-size:contain;">
+              </div>
+              <!--/.bg-holder-->
+
+              <h1 class="text-center">ABOUT US</h1>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <section class="py-5">
+        <div class="bg-holder bg-size" style="background-image:url(static/assets/img/gallery/about-bg.png);background-position:top center;background-size:contain;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 order-lg-1 mb-5 mb-lg-0"><img class="fit-cover rounded-circle w-100" src="static/assets/img/gallery/AIChatbots1.png" alt="..." /></div>
+            <div class="col-md-6 text-center text-md-start">
+              <h2 class="fw-bold mb-4">We are improving access to <br class="d-none d-sm-block" />mental health help</h2>
+              <p>We believe that everyone should have easy access to <br class="d-none d-sm-block" />mental health help. Our main objective is to simplify its access <br class="d-none d-sm-block" />to anyone who might need it<br class="d-none d-sm-block" />where he/she is at any time. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ============================================-->
+
+      <!-- ============================================-->
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+    
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-5" id="work">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 py-3">
+              <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/blog-post.png);background-position:top center;background-size:contain;">
+              </div>
+              <!--/.bg-holder-->
+
+              <h1 class="text-center">HOW IT WORKS</h1>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+      <section>
+        <div class="bg-holder bg-size" style="background-image:url(static/assets/img/gallery/dot-bg.png);background-position:top left;background-size:auto;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row">
+            {% for i in itworks %}
+
+            <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="card h-100 shadow card-span rounded-3"><img class="card-img-top rounded-top-3" src="/media/{{i.image}}" alt="function" />
+                <div class="card-body"><span class="fs--1 text-primary me-3">Mental Health</span>
+                  <h5 class="font-base fs-lg-0 fs-xl-1 my-3"> {{ i.desc }} </h5>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+            
+          </div>
+        </div>
+      </section>
+      <section class="bg-primary">
+        <div class="bg-holder bg-size" style="background-image:url(static/assets/img/gallery/cta-bg.png);background-position:center right;margin-top:-8.125rem;background-size:contain;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2 class="fw-bold text-light">Get Help Any Time</h2>
+              <p class="text-soft-primary">Aura AI is created in order to improve access to mental health help. <br />Providing 24/7 instant access and help.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-0 bg-secondary">
+        <div class="bg-holder opacity-25" style="background-image:url(static/assets/img/gallery/dot-bg.png);background-position:top left;margin-top:-3.125rem;background-size:auto;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row py-8">
+            <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img src="static/assets/img/logo.png" height="51" alt="" /></a>
+              <p class="text-light my-4">ojared511@gmail.com <br />+254795648256</p>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
+              <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Services</h5>
+              <ul class="list-unstyled mb-md-4 mb-lg-0">
+                <li class="lh-lg"><a class="footer-link" href="#!">Find out the problem</a></li>
+                <li class="lh-lg"><a class="footer-link" href="#!">Figure out the solution</a></li>
+                <li class="lh-lg"><a class="footer-link" href="#!">Solve the problem</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
+              <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif"> Customer Care</h5>
+              <ul class="list-unstyled mb-md-4 mb-lg-0">
+                <li class="lh-lg"><a class="footer-link" href="#!">ojared511@gmail.com</a></li>
+                <li class="lh-lg"><a class="footer-link" href="#!">+254795648256</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section class="py-0 bg-primary">
+
+          <div class="container">
+            <div class="row justify-content-md-between justify-content-evenly py-4">
+              <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
+                <p class="fs--1 my-2 fw-bold text-200">All rights Reserved &copy; Aura AI, <script>document.write(new Date().getFullYear());</script></p>
+              </div>
+            </div>
+          </div>
+          <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+      </section>
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="{% static 'vendors/@popperjs/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendors/is/is.min.js' %}"></script>
+    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="{% static 'vendors/fontawesome/all.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&amp;display=swap" rel="stylesheet">
+  </body>
+
+</html>
