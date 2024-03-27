@@ -52,11 +52,7 @@ def classifier_model(request):
         result = model.predict(test_image) 
         # ----------------
         # LABELS
-        # Daisy 0
-        # Dandelion 1
-        # Roses 2
-        # Sunflowers 3
-        # Tulips 4
+        
         # ----------------
         print("Prediction: " + str(np.argmax(result)))
 
